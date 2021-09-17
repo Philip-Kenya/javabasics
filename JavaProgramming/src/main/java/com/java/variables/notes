@@ -1,0 +1,64 @@
+*variable names
+ 	-camel case
+final--can't be changed after being assigned.
+
+*primitive data types
+   --built into the language
+   --foundation of all other types
+   -*categories
+   		int
+   		float point
+   		character
+   		boolean
+   		
+   	integer types
+   	  ..byte
+   	  ..short
+   	  ..int
+   	  ..long	0L
+   	  
+   	 Float types 
+   	 float 0f;
+   	 double od;
+   	 
+   	 Character type
+   	  ...single quote.
+   	  ...unicode code points.
+   	  
+   	  Boolean type.
+   	    true/false value
+   Primitive types are stored by Value
+   
+   
+   
+   
+   
+   ***********Arithmetic operators****
+   	    basic operators..
+   	    --no impact on values used in the operations
+   	    
+   	    Prefix/postfix
+   	    --increase or decrease a value
+   	    --Replace original value
+   	    
+   	    compound
+   	    --operate on value
+   	    --replace original values
+   	    
+   	    
+   	    Type conversion
+   	    
+   	    Implicit type conversion
+   	    --conversion automatically performed by the compiler
+   	----widening conversions--- 
+   	
+   	   
+   	    explicit type conversion
+   	    --widening or narrowing conversions
+   	    --performed explicitly in code with cast operator
+   	    
+   	    java is strongly type---have to declare the type of variable
+   	    
+   	    
+   	    
+   	    
