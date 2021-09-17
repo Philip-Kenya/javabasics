@@ -4,9 +4,9 @@ public class CalcEngine {
 
 	public static void main(String[] args) {
 		double value1=100.0;
-		double value2=50.0;
+		double value2=0;
 		double result=0.0;
-		char opCode ='a';
+		char opCode ='d';
 		
 		if (opCode =='a')
 		{
@@ -25,12 +25,17 @@ public class CalcEngine {
 		}
 		else if (opCode =='d')
 		{
-			result = value1 / value2;
+			if (value2!=0) {
+				result = value1 / value2;
+			}
+			
 			
 		}
 		else
 		{
+			System.out.println("invalid opCode");
 			result=0.0d;
+		
 		}
 		
 		
