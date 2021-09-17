@@ -4,43 +4,33 @@ public class CalcEngine {
 
 	public static void main(String[] args) {
 		double value1=100.0;
-		double value2=0;
+		double value2=3;
 		double result=0.0;
 		char opCode ='d';
-		
-		if (opCode =='a')
-		{
+
+		switch (opCode) {
+		case 'a':
 			result = value1 + value2;
-			
-		}
-		else if (opCode =='s')
-		{
+			break;
+		case 's':
 			result = value1 - value2;
-			
-		}
-		else	if (opCode =='m')
-		{
+			break;	
+		case 'm':
 			result = value1 * value2;
-			
-		}
-		else if (opCode =='d')
-		{
+			break;	
+		case 'd':
+			result = value1 * value2;
 			if (value2!=0) {
 				result = value1 / value2;
+				System.out.println(result);
 			}
-			
-			
-		}
-		else
-		{
+			break;	
+		default:
 			System.out.println("invalid opCode");
 			result=0.0d;
-		
+			break;
 		}
-		
-		
 		System.out.println(result);
-
 	}
 
 }
