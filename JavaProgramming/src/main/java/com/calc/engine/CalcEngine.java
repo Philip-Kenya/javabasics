@@ -16,29 +16,41 @@ public class CalcEngine {
         
 		for(int i =0 ; i<opCodes.length; i++)
 		{
-		switch (opCodes[i]) {
-		case 'a':
-			results[i] =leftVals[i]+rightVals[i];
-			break;
-		case 's':
-			results[i] =leftVals[i]-rightVals[i];
-			break;	
-		case 'm':
-			results[i] =leftVals[i]*rightVals[i];
-			break;	
-		case 'd':
-			
-			if (rightVals[i]!=0.0) {
-				results[i] =leftVals[i]/rightVals[i];
-			}
-			break;	
-		default:
-			System.out.println("invalid opCode");
-			results[i]=0.0d;
-			break;
-		}}
+			results[i]= execute(opCodes[i], leftVals[i], rightVals[i]);
+		}
+		
 		for(double currentResult: results)
+				
 		System.out.println(currentResult);
+		
 	}
+		static double execute(char opCode, double leftVal, double rightVal)
+		{
+			double result=0;
+			switch (opCode) {
+			case 'a':
+				result =leftVal+rightVal;
+				break;
+			case 's':
+				result=leftVal-rightVal;
+				break;	
+			case 'm':
+				result=leftVal*rightVal;
+				break;	
+			case 'd':
+				
+				if (rightVal!=0.0) {
+					result =leftVal/rightVal;
+				}
+				break;	
+			default:
+				System.out.println("invalid opCode");
+				result=0.0d;
+				break;
+			}
+			return result;
+		}
+	}
+		
 
-}
+	
