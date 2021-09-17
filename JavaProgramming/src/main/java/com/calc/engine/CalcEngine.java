@@ -3,34 +3,42 @@ package com.calc.engine;
 public class CalcEngine {
 
 	public static void main(String[] args) {
-		double value1=100.0;
-		double value2=3;
-		double result=0.0;
-		char opCode ='d';
-
-		switch (opCode) {
+		double[] leftVals= {
+				100.0d, 25.0d,225.0d, 11.0d	
+		};
+		double[] rightVals= {
+				50.0d, 92.0d, 17.0d, 3.0d
+		};
+		char[] opCodes = {
+				'd', 'a', 's','m'
+		};
+        double [] results = new double[opCodes.length];
+        
+		for(int i =0 ; i<opCodes.length; i++)
+		{
+		switch (opCodes[i]) {
 		case 'a':
-			result = value1 + value2;
+			results[i] =leftVals[i]+rightVals[i];
 			break;
 		case 's':
-			result = value1 - value2;
+			results[i] =leftVals[i]-rightVals[i];
 			break;	
 		case 'm':
-			result = value1 * value2;
+			results[i] =leftVals[i]*rightVals[i];
 			break;	
 		case 'd':
-			result = value1 * value2;
-			if (value2!=0) {
-				result = value1 / value2;
-				System.out.println(result);
+			
+			if (rightVals[i]!=0.0) {
+				results[i] =leftVals[i]/rightVals[i];
 			}
 			break;	
 		default:
 			System.out.println("invalid opCode");
-			result=0.0d;
+			results[i]=0.0d;
 			break;
-		}
-		System.out.println(result);
+		}}
+		for(double currentResult: results)
+		System.out.println(currentResult);
 	}
 
 }

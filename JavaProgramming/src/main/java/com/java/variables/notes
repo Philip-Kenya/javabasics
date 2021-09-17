@@ -60,5 +60,8 @@ final--can't be changed after being assigned.
    	    java is strongly type---have to declare the type of variable
    	    
    	    
+   	    parallel arrays
+   	    --element in one arrays are ment to be used in other arrays.
+   	    
    	    
    	    
