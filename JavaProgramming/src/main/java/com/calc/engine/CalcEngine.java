@@ -1,5 +1,6 @@
 package com.calc.engine;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class CalcEngine {
@@ -7,7 +8,7 @@ public class CalcEngine {
 	private static Scanner scanner;
 
 	public static void main(String[] args) {
- 		double[] leftVals= {
+		double[] leftVals= {
 				200.0d, 25.0d,225.0d, 11.0d	
 		};
 		double[] rightVals= {
@@ -53,17 +54,34 @@ public class CalcEngine {
 	System.out.println("part 0 is " +parts[0]);
 	System.out.println("part 1 is " +parts[1]);
 	System.out.println("part 2 is " +parts[2]);
-	
+
 	performOperation(parts);
 
 	}
 	private static void performOperation(String[] parts) {
 		char opCode=opCodeFromString(parts[0]);
-		double leftVal=valueFromWord(parts[1]);
-		double rightVal=valueFromWord(parts[2]);
-		double result=execute(opCode, leftVal, rightVal);
-		displayResult(opCode, leftVal, rightVal, result);
+		if(opCode=='w')
+			handleWhen(parts);
+		else {
+			double leftVal=valueFromWord(parts[1]);
+			double rightVal=valueFromWord(parts[2]);
+			double result=execute(opCode, leftVal, rightVal);
+			displayResult(opCode, leftVal, rightVal, result);
+		}
 
+
+
+
+
+
+	}
+	private static void handleWhen(String[] parts) {
+		LocalDate startDate=LocalDate.parse(parts[1]);
+		long daysToAdd=(long) valueFromWord(parts[2]);
+		LocalDate newDate = startDate.plusDays(daysToAdd);
+		String output= String.format("%s plus %d days is %s", startDate, daysToAdd, newDate);
+		System.out.println(output);
+		
 	}
 	private static void displayResult(char opCode, double leftVal, double rightVal, double result) {
 		char symbol= symbolFromOpCode(opCode);
@@ -77,22 +95,22 @@ public class CalcEngine {
 		 */
 		String output= String.format("%.3f %c %.3f =%.3f",leftVal, symbol, rightVal, result);
 		System.out.println(output);
-		
+
 	}
 	private static char symbolFromOpCode(char opCode) {
-    char[] opCodes= {'a', 's', 'm', 'd'};
-    char [] symbols= {'+', '-', '*', '/'};
-    char symbol='o';
-    for (int index = 0; index < opCodes.length; index++) {
-		if(opCode== opCodes[index])
-		{
-			symbol=symbols[index];
-			break;
-			
+		char[] opCodes= {'a', 's', 'm', 'd'};
+		char [] symbols= {'+', '-', '*', '/'};
+		char symbol='o';
+		for (int index = 0; index < opCodes.length; index++) {
+			if(opCode== opCodes[index])
+			{
+				symbol=symbols[index];
+				break;
+
+			}
+
 		}
-		
-	}
-    return symbol;
+		return symbol;
 	}
 	private static void handleCommandLine(String[] args) {
 		char opCode=args[0].charAt(0);
