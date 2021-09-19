@@ -61,11 +61,15 @@ final--can't be changed after being assigned.
    	    
    	    
    	    parallel arrays
-   	    --element in one arrays are ment to be used in other arrays.
+   	    --element in one arrays are meant to be used in other arrays.
    	    
    	    
    	    Interning a string
    	    --provides a canonicalized string value
    	    --enables == comparison operator
+   	    
+   	    primitive wrapper classes
+   	    --enhance primitive data types
+   	    ---each primitive type has it's own wrapper class
    	    
    	    
